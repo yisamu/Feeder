@@ -1,8 +1,9 @@
-# Feeder
+# Build one Feeder
 
-Buidl one Feeder
-Define new circuit
-Vsource
-Transfomer
-Linecode
-Line
+
+1.Define new circuit
+2.Vsource
+3.Transfomer
+4.Linecode
+5.Line
+6.Load
