@@ -1,0 +1,35 @@
+!
+! SYNERGEE ELECTRIC EXPORT TO OPENDSS
+!
+
+Clear
+
+
+new object=circuit.DECORAH601738
+
+
+Edit Vsource.Source bus1=DECORAH601738 pu=1.00 basekv=69.00 x1r1=2.8663 x0r0=3.3273
+
+
+new transformer.tran_C4094294 phases=3 windings=2 buses=[97798118922, reg_C4094294.1.2.3] conns=[Delta Wye-Gnd] kvs=[69.00 13.80] kvas=[15000.0 15000.0] XHL=6.50
+
+
+Redirect Linecode.dss
+
+Redirect Line_A.dss
+
+Redirect Capacitor.dss
+
+
+Redirect Load.dss
+
+
+!--------------------------Calculate---------------------!
+Set VoltageBases = "69.0, 13.8, 0.208"	! Set base voltage as 69 kV, 13.8 kV, 0.208 kV
+CalcVoltageBases			! Estimate the voltage base for each bus 
+Solve					! Solve the circuit
+
+Solve
+//Show Voltages
+//Show Currents
+//Show Powers kVA elements
